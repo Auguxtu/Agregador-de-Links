@@ -5,7 +5,7 @@
 }
 :root {
   --text-color: white;
-  --bg-url: url(./assets/bg-desktop.jpg);
+  --bg-url: url(./assets/bg-mobile.jpg);
   --stroke: rgba(255, 255, 255, 0.5);
   --surface: rgba(255, 255, 255, 0.1);
   --holder: rgba(255, 255, 255, 0.2);
@@ -15,7 +15,7 @@
 
 .branco {
   --text-color: black;
-  --bg-url: url(./assets/bg-desktop-light.jpg);
+  --bg-url: url(./assets/bg-mobile-light.jpg);
   --stroke: rgba(0, 0, 0, 0.5);
   --surface: rgba(0, 0, 0, 0.1);
   --holder: rgba(0, 0, 0, 0.2);
@@ -24,13 +24,15 @@
 }
 body {
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 body * {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
 }
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
 }
@@ -65,12 +67,16 @@ body * {
   z-index: 1;
   top: 50%;
   transform: translateY(-50%);
+  animation: slide2 0.2s;
 }
 .branco #switch button {
   right: 0;
   left: initial;
+  animation: slide 0.2s forwards;
 }
-
+#switch button:hover {
+  outline: 8px solid var(--social-holder);
+}
 #switch span {
   display: block;
   width: 64px;
@@ -144,4 +150,29 @@ footer {
 footer a {
   list-style: none;
   text-decoration: none;
+}
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+  .branco {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide2 {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
