@@ -131,12 +131,18 @@ ul li a {
   transition: background 0.2s;
 }
 
+ul li a ion-icon {
+  position: absolute;
+  right: 70%;
+  font-size: 24px;
+  align-content: center;
+}
+
 /* pseudo-selector */
 ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
 }
-
 /* social links */
 #social-links {
   display: flex;
