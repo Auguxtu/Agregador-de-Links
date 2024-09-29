@@ -1,11 +1,11 @@
-function ToggleMode() {
+function toggleMode() {
   const html = document.documentElement
-  html.classList.toggle("branco")
+  html.classList.toggle("light")
 
   const img = document.querySelector("#profile img")
 
-  if (html.classList.contains("branco")) {
-    img.setAttribute("src", "./assets/Untitled design.png")
+  if (html.classList.contains("light")) {
+    img.setAttribute("src", "./assets/cabelo.png")
   } else {
     img.setAttribute("src", "./assets/careca.png")
   }
