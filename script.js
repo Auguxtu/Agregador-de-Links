@@ -8,10 +8,4 @@ function ToggleMode() {
   } else {
     img.setAttribute("src", "/assets/careca.png")
   }
-  const alt = document.querySelector("#profile")
-  if (html.classList.contains("branco")) {
-    alt.setAttribute('alt="Gutin Sorrindo"')
-  } else {
-    alt.setAttribute('alt="Gutin Careca"')
-  }
 }
